@@ -16,10 +16,17 @@ for (i = 0; i < 10; i++) {
 Promise.all(emailList).then(result => {
     result
     for (j = 0; j < result.length; j++) {
-
         const listElement = document.createElement("li");
-        list.appendChild(listElement);
         listElement.textContent = result[j];
         list.appendChild(listElement);
     }
 });
+
+
+//bottone che ricarica la pagina, quindi genera nuove email.
+const recreateButton = document.getElementById("rigenera");
+
+recreateButton.addEventListener("click", () => {
+    window.location.reload(true);
+});
+
